@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fahim Goffar Hossain</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #ffffff;
+      padding-top: 2rem;
+      color: #212529;
+    }
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    nav ul li a {
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #343a40;
+      border-bottom: 2px solid transparent;
+    }
+    nav ul li a:hover {
+      color: #0056b3;
+      border-bottom: 2px solid #0056b3;
+    }
+    section {
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    .icon-links {
+      display: flex;
+      justify-content: start;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .icon-links img {
+      height: 24px;
+      transition: transform 0.3s ease;
+    }
+    .icon-links img:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body class="container">
+  <h1 class="mb-3">Fahim Goffar Hossain</h1>
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showPage('home')">/home</a></li>
+      <li><a href="#" onclick="showPage('about')">/about</a></li>
+      <li><a href="#" onclick="showPage('publications')">/publications</a></li>
+      <li><a href="https://github.com/yourusername/yourrepo/raw/main/resume.pdf" target="_blank">/resume</a></li>
+    </ul>
+  </nav>
+
+  <section id="home" class="active">
+    <h2 class="mt-4">Hi!</h2>
+    <p>I’m Fahim Goffar Hossain, a B.Sc. Statistics graduate from Khulna University with a CGPA of 3.29/4.00. My research focuses on NLP, fake news detection, and data science for social impact, including Bengali language content. I’ve contributed to several public health and NLP projects, with multiple papers in the pipeline.</p>
+    <p>I'm skilled in Python, R, SQL, and ML frameworks like Scikit-learn and TensorFlow, with experience in LLM prompting, topic modeling (LDA), and explainability tools like LIME. I’ve explored media framing, health communication, and regional news analysis through statistical modeling and machine learning. I’m currently preparing for GRE and IELTS, aiming to pursue a fully-funded MS in Data Science.</p>
+    <div class="icon-links">
+      <a href="https://github.com/yourusername" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub"></a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn"></a>
+      <a href="https://kaggle.com/yourusername" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/kaggle.svg" alt="Kaggle"></a>
+      <a href="mailto:your_email@example.com"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email"></a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>📟 About Me</h2>
+    <p><strong>Fahim Goffar Hossain</strong></p>
+    <p>B.Sc. in Statistics<br>Khulna University, Bangladesh<br>CGPA: 3.29/4.00<br>Expected Graduation: January 2025</p>
+    <h3>🛠️ Skills</h3>
+    <ul>
+      <li><strong>Languages:</strong> Python, R, SQL, C++</li>
+      <li><strong>ML/DS:</strong> Pandas, NumPy, Scikit-learn, TensorFlow, BERT, LDA, LIME</li>
+      <li><strong>Data Tools:</strong> BeautifulSoup4, SNScrape, Newspaper3k</li>
+      <li><strong>Visualization:</strong> Matplotlib, Seaborn, Plotly</li>
+    </ul>
+  </section>
+
+  <section id="publications">
+    <h2>📚 Publications</h2>
+    <h4>1. July Revolution: Topic Modeling and Sentiment Analysis Across Bangladeshi, Indian & Pakistani Newspapers</h4>
+    <ul>
+      <li><strong>Authors:</strong> Hossain, F. G., et al.</li>
+      <li><strong>Conference:</strong> [To be announced]</li>
+      <li><strong>Date:</strong> [Expected mid-2025]</li>
+      <li><strong>Contribution:</strong> Designed analysis pipeline, conducted sentiment and topic modeling, and authored findings.</li>
+    </ul>
+  </section>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
+</body>
+</html>
