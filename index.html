@@ -50,10 +50,69 @@
     .icon-links img:hover {
       transform: scale(1.1);
     }
+
+    /* Breaking Bad name banner styles */
+    .bb-banner {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 20px;
+      font-family: 'IM Fell English', serif;
+    }
+    .bb-row {
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+    }
+    .bb-text {
+      font-size: 2.5rem;
+      line-height: 1;
+    }
+    .bb-tile {
+      position: relative;
+      width: 80px;
+      height: 80px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at 30% 30%, #3c7f3c, #2f6a2f);
+      border: 2px solid #fff;
+      border-radius: 6px;
+      color: #fff;
+      font-weight: bold;
+    }
+    .bb-tile .letter {
+      font-size: 2.5rem;
+    }
+    .bb-tile .badge {
+      position: absolute;
+      top: 4px;
+      right: 6px;
+      font-size: 0.9rem;
+    }
   </style>
+  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap" rel="stylesheet">
 </head>
 <body class="container">
-  <h1 class="mb-3">Fahim Goffar Hossain</h1>
+  <!-- Breaking Bad style name header -->
+  <div class="bb-banner mb-4">
+    <div class="bb-row">
+      <span class="bb-text">g</span>
+      <div class="bb-tile"><span class="badge">8</span><span class="letter">O</span></div>
+      <span class="bb-text">ffar</span>
+    </div>
+    <div class="bb-row">
+      <div class="bb-tile"><span class="badge">1</span><span class="letter">H</span></div>
+      <div class="bb-tile"><span class="badge">8</span><span class="letter">O</span></div>
+      <span class="bb-text">ssain</span>
+    </div>
+    <div class="bb-row">
+      <span class="bb-text">fa</span>
+      <div class="bb-tile"><span class="badge">1</span><span class="letter">H</span></div>
+      <span class="bb-text">im</span>
+    </div>
+  </div>
+
   <nav>
     <ul>
       <li><a href="#" onclick="showPage('home')">/home</a></li>
