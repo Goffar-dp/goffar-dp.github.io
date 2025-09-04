@@ -9,9 +9,10 @@
   <style>
     body {
       font-family: 'Georgia', serif;
-      background-color: #ffffff;
+      background: radial-gradient(circle at center, #3c3c1f, #1a1a0f);
       padding-top: 2rem;
-      color: #212529;
+      color: #f1f1f1;
+      min-height: 100vh;
     }
     nav ul {
       list-style: none;
@@ -24,12 +25,12 @@
       text-decoration: none;
       font-size: 1.1rem;
       font-weight: bold;
-      color: #343a40;
+      color: #e0e0e0;
       border-bottom: 2px solid transparent;
     }
     nav ul li a:hover {
-      color: #0056b3;
-      border-bottom: 2px solid #0056b3;
+      color: #80ff80;
+      border-bottom: 2px solid #80ff80;
     }
     section {
       display: none;
@@ -45,6 +46,7 @@
     }
     .icon-links img {
       height: 24px;
+      filter: invert(1);
       transition: transform 0.3s ease;
     }
     .icon-links img:hover {
