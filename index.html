@@ -25,12 +25,12 @@
       text-decoration: none;
       font-size: 1.1rem;
       font-weight: bold;
-      color: #e0e0e0;
+      color: #f8f9fa;
       border-bottom: 2px solid transparent;
     }
     nav ul li a:hover {
-      color: #80ff80;
-      border-bottom: 2px solid #80ff80;
+      color: #66ccff;
+      border-bottom: 2px solid #66ccff;
     }
     section {
       display: none;
@@ -46,8 +46,8 @@
     }
     .icon-links img {
       height: 24px;
-      filter: invert(1);
       transition: transform 0.3s ease;
+      filter: invert(1);
     }
     .icon-links img:hover {
       transform: scale(1.1);
@@ -60,6 +60,7 @@
       align-items: flex-start;
       gap: 20px;
       font-family: 'IM Fell English', serif;
+      margin-bottom: 2rem;
     }
     .bb-row {
       display: flex;
@@ -92,12 +93,20 @@
       right: 6px;
       font-size: 0.9rem;
     }
+
+    /* Divider line style */
+    hr.page-divider {
+      border: none;
+      border-top: 2px solid #444;
+      margin-top: 2rem;
+    }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap" rel="stylesheet">
 </head>
 <body class="container">
-  <!-- Breaking Bad style name header -->
-  <div class="bb-banner mb-4">
+
+  <!-- Breaking Bad style name header only on home -->
+  <div id="bbHeader" class="bb-banner">
     <div class="bb-row">
       <span class="bb-text">g</span>
       <div class="bb-tile"><span class="badge">8</span><span class="letter">O</span></div>
@@ -134,6 +143,7 @@
       <a href="https://kaggle.com/yourusername" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/kaggle.svg" alt="Kaggle"></a>
       <a href="mailto:your_email@example.com"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email"></a>
     </div>
+    <hr class="page-divider">
   </section>
 
   <section id="about">
@@ -147,6 +157,7 @@
       <li><strong>Data Tools:</strong> BeautifulSoup4, SNScrape, Newspaper3k</li>
       <li><strong>Visualization:</strong> Matplotlib, Seaborn, Plotly</li>
     </ul>
+    <hr class="page-divider">
   </section>
 
   <section id="publications">
@@ -158,6 +169,7 @@
       <li><strong>Date:</strong> [Expected mid-2025]</li>
       <li><strong>Contribution:</strong> Designed analysis pipeline, conducted sentiment and topic modeling, and authored findings.</li>
     </ul>
+    <hr class="page-divider">
   </section>
 
   <script>
@@ -166,6 +178,14 @@
         section.classList.remove('active');
       });
       document.getElementById(pageId).classList.add('active');
+
+      // Show BB header only on home
+      const bbHeader = document.getElementById('bbHeader');
+      if (pageId === 'home') {
+        bbHeader.style.display = 'flex';
+      } else {
+        bbHeader.style.display = 'none';
+      }
     }
   </script>
 </body>
