@@ -1,69 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Goffar Hossain Fahim – Name Banner</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- A decorative serif similar to the one in your picture. Replace with your exact font if you have it. -->
-  <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fahim Goffar Hossain</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
-    :root{
-      --bg-1:#1f1e05; /* deep olive */
-      --bg-2:#46420a; /* lighter olive */
-      --tile:#2f6a2f; /* base green */
-      --tile-hi:#3c7f3c; /* inner gradient */
-      --border:#ffffff;
+    body {
+      font-family: 'Georgia', serif;
+      background-color: #ffffff;
+      padding-top: 2rem;
+      color: #212529;
     }
-    html,body{height:100%;}
-    body{
-      margin:0;
-      display:grid;
-      place-items:center;
-      background: radial-gradient(1200px 800px at 25% 20%, var(--bg-2), transparent 60%),
-                  radial-gradient(1000px 900px at 80% 70%, var(--bg-2), transparent 55%),
-                  linear-gradient(180deg, var(--bg-1), #000);
-      color:#fff;
-      font-family: "IM Fell English", serif;
+    nav ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
     }
-    .wrap{width:min(900px, 92vw); padding:24px;}
-
-    /* —— IMAGE (pixel-perfect) ——————————— */
-    .exact-image{display:flex; justify-content:center;}
-    .exact-image img{max-width:100%; height:auto; border-radius:8px; box-shadow:0 10px 30px rgba(0,0,0,.6);}    
-
-    /* —— CSS RECREATION (selectable text) ——— */
-    .banner{display:flex; flex-direction:column; align-items:flex-start; gap:28px;}
-    .row{display:flex; align-items:flex-end; gap:18px;}
-    .serif{font-size:clamp(40px, 6vw, 92px); line-height:1; letter-spacing:.5px; text-shadow:0 2px 6px rgba(0,0,0,.45);}    
-
-    .tile{position:relative; width:clamp(88px, 13vw, 180px); aspect-ratio:1 / 1; display:grid; place-items:center; 
-          border:4px solid var(--border); border-radius:6px; 
-          background: radial-gradient(90% 90% at 30% 35%, var(--tile-hi), var(--tile));
-          box-shadow:0 15px 40px rgba(0,0,0,.55), inset 0 1px 0 rgba(255,255,255,.15);}   
-    .tile .letter{font-size:clamp(48px, 9vw, 132px); font-weight:700; line-height:1;}
-    .badge{position:absolute; top:6px; right:8px; font-size:clamp(12px, 2vw, 22px); font-weight:700;}
-
-    /* spacing tweaks to mimic the visual in your picture */
-    .row.r1 .serif.g{margin-right:4px;}    
-    .row.r1 .serif.ffar{margin-left:2px;}
-    .row.r2 .serif.ssain{margin-left:4px;}
-    .row.r3 .serif.fa{margin-right:6px;}
-
-    /* small screens */
-    @media (max-width:520px){
-      .row{gap:12px}
+    nav ul li a {
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #343a40;
+      border-bottom: 2px solid transparent;
+    }
+    nav ul li a:hover {
+      color: #0056b3;
+      border-bottom: 2px solid #0056b3;
+    }
+    section {
+      display: none;
+    }
+    section.active {
+      display: block;
+    }
+    .icon-links {
+      display: flex;
+      justify-content: start;
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .icon-links img {
+      height: 24px;
+      transition: transform 0.3s ease;
+    }
+    .icon-links img:hover {
+      transform: scale(1.1);
     }
   </style>
 </head>
-<body>
-  <div class="wrap">
-    <!-- METHOD A (EXACT): Use your exported image directly -->
-    <section class="exact-image" aria-label="Exact image rendering">
-      <!-- Replace the src below with your actual file path or URL -->
-      <img src="E:\website\name.jpeg" alt="Name banner: Goffar Hossain Fahim in periodic-table style" />
-    </section>
-  </div>
+<body class="container">
+  <h1 class="mb-3">Fahim Goffar Hossain</h1>
+  <nav>
+    <ul>
+      <li><a href="#" onclick="showPage('home')">/home</a></li>
+      <li><a href="#" onclick="showPage('about')">/about</a></li>
+      <li><a href="#" onclick="showPage('publications')">/publications</a></li>
+      <li><a href="https://github.com/Goffar-dp/goffar-dp.github.io/blob/main/Fahim's%20CV.pdf" target="_blank">/resume</a></li>
+    </ul>
+  </nav>
+
+  <section id="home" class="active">
+    <h2 class="mt-4">Hi!</h2>
+    <p>I’m Fahim Goffar Hossain, a B.Sc. Statistics graduate from Khulna University with a CGPA of 3.29/4.00. My research focuses on NLP, fake news detection, and data science for social impact, including Bengali language content. I’ve contributed to several public health and NLP projects, with multiple papers in the pipeline.</p>
+    <p>I'm skilled in Python, R, SQL, and ML frameworks like Scikit-learn and TensorFlow, with experience in LLM prompting, topic modeling (LDA), and explainability tools like LIME. I’ve explored media framing, health communication, and regional news analysis through statistical modeling and machine learning.</p>
+    <div class="icon-links">
+      <a href="https://github.com/yourusername" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub"></a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn"></a>
+      <a href="https://kaggle.com/yourusername" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/kaggle.svg" alt="Kaggle"></a>
+      <a href="mailto:your_email@example.com"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email"></a>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>📟 About Me</h2>
+    <p><strong>Fahim Goffar Hossain</strong></p>
+    <p>B.Sc. in Statistics<br>Khulna University, Bangladesh<br>CGPA: 3.29/4.00<br>Expected Graduation: January 2025</p>
+    <h3>🛠️ Skills</h3>
+    <ul>
+      <li><strong>Languages:</strong> Python, R, SQL, C++</li>
+      <li><strong>ML/DS:</strong> Pandas, NumPy, Scikit-learn, TensorFlow, BERT, LDA, LIME</li>
+      <li><strong>Data Tools:</strong> BeautifulSoup4, SNScrape, Newspaper3k</li>
+      <li><strong>Visualization:</strong> Matplotlib, Seaborn, Plotly</li>
+    </ul>
+  </section>
+
+  <section id="publications">
+    <h2>📚 Publications</h2>
+    <h4>1. July Revolution: Topic Modeling and Sentiment Analysis Across Bangladeshi, Indian & Pakistani Newspapers</h4>
+    <ul>
+      <li><strong>Authors:</strong> Hossain, F. G., et al.</li>
+      <li><strong>Conference:</strong> [To be announced]</li>
+      <li><strong>Date:</strong> [Expected mid-2025]</li>
+      <li><strong>Contribution:</strong> Designed analysis pipeline, conducted sentiment and topic modeling, and authored findings.</li>
+    </ul>
+  </section>
+
+  <script>
+    function showPage(pageId) {
+      document.querySelectorAll('section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(pageId).classList.add('active');
+    }
+  </script>
 </body>
 </html>
