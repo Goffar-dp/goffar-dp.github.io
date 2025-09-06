@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Fahim Goffar Hossain</title>
+  <title>Goffar H. Fahim</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
   <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
@@ -13,7 +13,25 @@
       padding-top: 2rem;
       color: #f1f1f1;
       min-height: 100vh;
+      position: relative;
     }
+    
+    /* Simple name header for non-about pages */
+    .simple-header {
+      display: none;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #f1f1f1;
+      margin-bottom: 2rem;
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+    }
+    
+    nav {
+      margin-top: 4rem;
+    }
+    
     nav ul {
       list-style: none;
       padding: 0;
@@ -94,18 +112,310 @@
       font-size: 0.9rem;
     }
 
+    /* News section styles */
+    .news-section {
+      margin-top: 2rem;
+    }
+    .news-container {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid #444;
+      border-radius: 8px;
+      padding: 1rem;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .news-item {
+      display: flex;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px solid #333;
+    }
+    .news-item:last-child {
+      border-bottom: none;
+    }
+    .news-date {
+      color: #66ccff;
+      font-weight: bold;
+      min-width: 120px;
+      font-size: 0.9rem;
+    }
+    .news-content {
+      flex: 1;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+    .news-content a {
+      color: #66ccff;
+      text-decoration: none;
+    }
+    .news-content a:hover {
+      text-decoration: underline;
+    }
+
+    /* Publications page styles */
+    .publications-list {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    
+    .publication-item {
+      display: flex;
+      gap: 1.5rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid #333;
+      align-items: flex-start;
+    }
+    
+    .publication-item:last-child {
+      border-bottom: none;
+    }
+    
+    .pub-thumbnail {
+      flex-shrink: 0;
+      width: 120px;
+      height: 80px;
+    }
+    
+    .pub-thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 6px;
+      background: #2f6a2f;
+    }
+    
+    .pub-content {
+      flex: 1;
+    }
+    
+    .pub-title {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #f1f1f1;
+      line-height: 1.3;
+    }
+    
+    .pub-authors {
+      font-size: 0.95rem;
+      color: #ccc;
+      margin-bottom: 0.5rem;
+    }
+    
+    .more-authors {
+      color: #66ccff;
+      cursor: pointer;
+    }
+    
+    .more-authors:hover {
+      text-decoration: underline;
+    }
+    
+    .pub-venue {
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-bottom: 1rem;
+    }
+    
+    .pub-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+    
+    .action-btn {
+      padding: 0.3rem 0.8rem;
+      font-size: 0.8rem;
+      font-weight: bold;
+      border: 1px solid;
+      border-radius: 4px;
+      background: transparent;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
+    
+    .bib-btn {
+      color: #66ccff;
+      border-color: #66ccff;
+    }
+    
+    .bib-btn:hover {
+      background: #66ccff;
+      color: #1a1a0f;
+    }
+    
+    .code-btn {
+      color: #66cc66;
+      border-color: #66cc66;
+    }
+    
+    .code-btn:hover {
+      background: #66cc66;
+      color: #1a1a0f;
+    }
+    
+    .website-btn {
+      color: #cc6666;
+      border-color: #cc6666;
+    }
+    
+    .website-btn:hover {
+      background: #cc6666;
+      color: #1a1a0f;
+    }
+    
+    .pub-year {
+      flex-shrink: 0;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #666;
+      width: 60px;
+      text-align: right;
+    }
+    
+    .year-divider {
+      display: flex;
+      align-items: center;
+      margin: 2rem 0;
+      color: #666;
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    
+    .year-divider::before,
+    .year-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: #333;
+    }
+    
+    .year-divider::before {
+      margin-right: 1rem;
+    }
+    
+    .year-divider::after {
+      margin-left: 1rem;
+    }
+
+    /* Projects page styles */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    
+    .project-category {
+      margin-bottom: 3rem;
+    }
+    
+    .category-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: #666;
+      text-align: right;
+      margin-bottom: 2rem;
+      position: relative;
+    }
+    
+    .category-title::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 50%;
+      height: 1px;
+      background: #333;
+      z-index: 1;
+    }
+    
+    .category-title span {
+      background: radial-gradient(circle at center, #3c3c1f, #1a1a0f);
+      padding: 0 1rem;
+      position: relative;
+      z-index: 2;
+    }
+    
+    .project-card {
+      background: rgba(0, 0, 0, 0.3);
+      border: 1px solid #333;
+      border-radius: 8px;
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-5px);
+      border-color: #66ccff;
+    }
+    
+    .project-image {
+      width: 100%;
+      height: 200px;
+      background: #2f6a2f;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      color: #fff;
+    }
+    
+    .project-content {
+      padding: 1.5rem;
+    }
+    
+    .project-title {
+      font-size: 1.3rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      color: #f1f1f1;
+    }
+    
+    .project-description {
+      font-size: 0.9rem;
+      color: #ccc;
+      line-height: 1.5;
+      margin-bottom: 1rem;
+    }
+    
+    .project-actions {
+      display: flex;
+      gap: 0.5rem;
+    }
+
     /* Divider line style */
     hr.page-divider {
       border: none;
       border-top: 2px solid #444;
       margin-top: 2rem;
     }
+
+    /* Scrollbar styling for webkit browsers */
+    .news-container::-webkit-scrollbar {
+      width: 6px;
+    }
+    .news-container::-webkit-scrollbar-track {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 3px;
+    }
+    .news-container::-webkit-scrollbar-thumb {
+      background: #666;
+      border-radius: 3px;
+    }
+    .news-container::-webkit-scrollbar-thumb:hover {
+      background: #888;
+    }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=IM+Fell+English&display=swap" rel="stylesheet">
 </head>
 <body class="container">
 
-  <!-- Breaking Bad style name header only on home -->
+  <!-- Simple name header for non-about pages -->
+  <div id="simpleHeader" class="simple-header">Goffar H. Fahim</div>
+
+  <!-- Breaking Bad style name header only on about page -->
   <div id="bbHeader" class="bb-banner">
     <div class="bb-row">
       <span class="bb-text">g</span>
@@ -126,57 +436,165 @@
 
   <nav>
     <ul>
-      <li><a href="#" onclick="showPage('home')">/home</a></li>
-      <li><a href="#" onclick="showPage('about')">/about</a></li>
+      <li><a href="#" onclick="showPage('about')">/about me</a></li>
       <li><a href="#" onclick="showPage('publications')">/publications</a></li>
-      <li><a href="https://github.com/Goffar-dp/goffar-dp.github.io/blob/main/Fahim's%20CV.pdf" target="_blank">/resume</a></li>
+      <li><a href="#" onclick="showPage('projects')">/projects</a></li>
+      <li><a href="https://drive.google.com/file/d/1gfUDaRGbPHK-0HyIRs1vnsA4NVs451VO/view?usp=sharing" target="_blank">/resume</a></li>
     </ul>
   </nav>
 
-  <section id="home" class="active">
-    <h2 class="mt-4">Hi!</h2>
-    <p>I’m Fahim Goffar Hossain, a B.Sc. Statistics graduate from Khulna University with a CGPA of 3.29/4.00. My research focuses on NLP, fake news detection, and data science for social impact, including Bengali language content. I’ve contributed to several public health and NLP projects, with multiple papers in the pipeline.</p>
-    <p>I'm skilled in Python, R, SQL, and ML frameworks like Scikit-learn and TensorFlow, with experience in LLM prompting, topic modeling (LDA), and explainability tools like LIME. I’ve explored media framing, health communication, and regional news analysis through statistical modeling and machine learning.</p>
+  <section id="about" class="active" style="text-align: justify;">
+     <h2 class="mt-4">Hey, thanks for stopping by! 👋</h2>
+    	<p></p>
+        <p>I am a <strong>Master's-by-thesis student in Statistics at Khulna University</strong>, supervised by <a href="#" style="color: #66ccff;">Dr. Md. Maniruzzaman</a>. I am deeply captivated by the transformative potential of deep learning and machine learning, particularly in addressing critical challenges like climate change and food security. My current research focuses on developing an <strong>AI-Based Multimodal System for Climate-Resilient Farming Practice Recommendations</strong> for smallholder farmers in Bangladesh.</p>
+    
+    <p>Previously, I completed my B.Sc. in Statistics from Khulna University. My bachelor thesis was supervised by <a href="#" style="color: #66ccff;">Sutapa Dey Barna</a>.</p>
+    
+    <p>In my free time, I enjoy sports, mostly football, travelling, and sleeping.</p>
+
+
+
+    <div class="news-section">
+      <h3>news</h3>
+      <div class="news-container">
+        <div class="news-item">
+          <div class="news-date">Mar, 2025</div>
+          <div class="news-content">Completed Research Assistant position at <a href="https://ku.ac.bd/discipline/stat">Statistics Discipline, Khulna University, Khulna - 9208</a></div>
+        </div>
+        <div class="news-item">
+          <div class="news-date">Jan, 2025</div>
+          <div class="news-content">Graduated from Khulna University with B.Sc. Statistics!</div>
+        </div>
+        <div class="news-item">
+          <div class="news-date">Dec, 2024</div>
+          <div class="news-content">Completed Technical Training in Applied Machine Learning and NLP at <a href="https://sites.google.com/view/mahdyresearchacademy/home"> - Mahdy Research Academy!</a></div>
+        </div>
+        <div class="news-item">
+          <div class="news-date">Jun 24, 2024</div>
+          <div class="news-content">Elected as General Secretary of Kristy - Cultural Organization, Khulna University!</div>
+        </div>
+      </div>
+    </div>
+
     <div class="icon-links">
-      <a href="https://github.com/yourusername" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub"></a>
-      <a href="https://linkedin.com/in/yourusername" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn"></a>
+      <a href="https://github.com/Goffar-dp" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub"></a>
+      <a href="https://www.linkedin.com/in/goffar-hossain/" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn"></a>
       <a href="https://kaggle.com/yourusername" target="_blank"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/kaggle.svg" alt="Kaggle"></a>
-      <a href="mailto:your_email@example.com"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email"></a>
+      <a href="mailto:goffarfahim@gmail.com"><img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email"></a>
     </div>
     <hr class="page-divider">
   </section>
 
-  <section id="about">
-    <h2>📟 About Me</h2>
-    <p><strong>Fahim Goffar Hossain</strong></p>
-    <p>B.Sc. in Statistics<br>Khulna University, Bangladesh<br>CGPA: 3.29/4.00<br>Expected Graduation: January 2025</p>
-    <h3>🛠️ Skills</h3>
-    <ul>
-      <li><strong>Languages:</strong> Python, R, SQL, C++</li>
-      <li><strong>ML/DS:</strong> Pandas, NumPy, Scikit-learn, TensorFlow, BERT, LDA, LIME</li>
-      <li><strong>Data Tools:</strong> BeautifulSoup4, SNScrape, Newspaper3k</li>
-      <li><strong>Visualization:</strong> Matplotlib, Seaborn, Plotly</li>
-    </ul>
+  <section id="publications">
+    <h1>publications</h1>
+
+    <div class="publications-list">
+      <div class="publication-item">
+        <div class="pub-thumbnail">
+          <img src="https://drive.google.com/file/d/1Mn8-K2KTH8UKcBUbR9qxoQioeb2hcx2p/view?usp=sharing">
+        </div>
+        <div class="pub-content">
+          <h3 class="pub-title">Cross-National Media Framing of Mass Movements: A Comparative Study of the July 2024 Uprising in South Asia</h3>
+          <p class="pub-authors">Sish Ahemmed Shozol and Md. Goffar Hossain</p>
+          <p class="pub-venue"><em>International Conference on July Revolution (ICJR-I), 2025</em></p>
+<a href="https://drive.google.com/file/d/1Xn3c2TY00mbqqOFaOyFUATiv00W9tTBP/view" target="_blank">
+    <button class="action-btn bib-btn">POSTER</button>
+  </a>
+  <button class="action-btn code-btn">CODE</button>
+  <a href="#" target="_blank">
+    <button class="action-btn website-btn">WEBSITE</button>
+  </a>
+        </div>
+        <div class="pub-year">2025</div>
+      </div>
+
+      <div class="year-divider">
+        <span>2024</span>
+      </div>
+
+      
+      <div class="publication-item">
+        <div class="pub-thumbnail">
+          <img src="https://via.placeholder.com/120x80/2f6a2f/ffffff?text=AI" alt="Fake News Detection">
+        </div>
+        <div class="pub-content">
+          <h3 class="pub-title">Enhancing Fake News Detection Using Data Augmentation and Advanced Machine Learning Algorithms with Explainable AI (XAI)</h3>
+          <p class="pub-authors">Fahim Goffar Hossain</p>
+          <p class="pub-venue"><em>Undergraduate Thesis, Khulna University, 2024</em></p>
+          <a href="hh" target="_blank">
+    <button class="action-btn bib-btn">POSTER</button>
+  </a>
+  <button class="action-btn code-btn">CODE</button>
+  <a href="#" target="_blank">
+    <button class="action-btn website-btn">WEBSITE</button>
+  </a>
+        </div>
+        <div class="pub-year">2024</div>
+      </div>
+
     <hr class="page-divider">
   </section>
 
-  <section id="publications">
-    <h1>📚 Publications</h1>
+  <section id="projects">
+    <h1>projects</h1>
 
-    <article>
-      <h2>1. July Revolution: Topic Modeling and Sentiment Analysis Across Bangladeshi, Indian & Pakistani Newspapers</h2>
-      <ul>
-        <li><strong>Authors:</strong> Hossain, F. G., et al.</li>
-        <li><strong>Conference:</strong> [To be announced]</li>
-        <li><strong>Date:</strong> [Expected mid–2025]</li>
-        <li><strong>Contribution:</strong> Designed analysis pipeline, conducted sentiment and topic modeling, and authored findings.</li>
-      </ul>
-      <p>
-        🔗 <a href="https://github.com/yourusername/yourproject" target="_blank">Code</a> | 
-        📄 <a href="files/JulyRevolution.pdf" target="_blank">PDF</a> | 
-        🖼️ <a href="files/JulyRevolutionPoster.png" target="_blank">Poster</a>
-      </p>
-    </article>
+    <div class="project-category">
+      <div class="category-title"><span>work</span></div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-image">📊</div>
+          <div class="project-content">
+            <h3 class="project-title">Bengali Fake News Detection</h3>
+            <p class="project-description">Machine learning system for detecting fake news in Bengali language using BERT and explainable AI techniques.</p>
+            <div class="project-actions">
+              <button class="action-btn bib-btn">BIB</button>
+              <button class="action-btn code-btn">CODE</button>
+              <button class="action-btn website-btn">WEBSITE</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">🌱</div>
+          <div class="project-content">
+            <h3 class="project-title">Climate-Resilient Agriculture Analytics</h3>
+            <p class="project-description">Data science pipeline for analyzing climate data and agricultural productivity patterns in Bangladesh.</p>
+            <div class="project-actions">
+              <button class="action-btn code-btn">CODE</button>
+              <button class="action-btn website-btn">WEBSITE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-category">
+      <div class="category-title"><span>university</span></div>
+      <div class="projects-grid">
+        <div class="project-card">
+          <div class="project-image">📈</div>
+          <div class="project-content">
+            <h3 class="project-title">Health Communication Analysis</h3>
+            <p class="project-description">Statistical analysis of public health communication patterns during mass movements using topic modeling.</p>
+            <div class="project-actions">
+              <button class="action-btn bib-btn">BIB</button>
+              <button class="action-btn code-btn">CODE</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-image">🔍</div>
+          <div class="project-content">
+            <h3 class="project-title">Media Framing Analysis</h3>
+            <p class="project-description">Cross-national analysis of media framing in South Asian newspapers using NLP techniques.</p>
+            <div class="project-actions">
+              <button class="action-btn website-btn">WEBSITE</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <hr class="page-divider">
   </section>
@@ -188,14 +606,23 @@
       });
       document.getElementById(pageId).classList.add('active');
 
-      // Show BB header only on home
+      // Show BB header only on about page, simple header on others
       const bbHeader = document.getElementById('bbHeader');
-      if (pageId === 'home') {
+      const simpleHeader = document.getElementById('simpleHeader');
+      
+      if (pageId === 'about') {
         bbHeader.style.display = 'flex';
+        simpleHeader.style.display = 'none';
       } else {
         bbHeader.style.display = 'none';
+        simpleHeader.style.display = 'block';
       }
     }
+
+    // Show about page by default
+    document.addEventListener('DOMContentLoaded', function() {
+      showPage('about');
+    });
   </script>
 </body>
 </html>
